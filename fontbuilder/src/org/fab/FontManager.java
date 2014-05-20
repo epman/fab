@@ -28,6 +28,7 @@ public class FontManager {
    public File fname = new File("font.png");
    public int dy = 0;
    public boolean showgrid = true;
+   public int width, height, ncols, nrows;
    
    private final static String CONF_FNAME = "fontbuilder.dat";
    public FontManager()  {
@@ -42,6 +43,10 @@ public class FontManager {
             fname  = new File(r.readLine());
             dy = Integer.parseInt( r.readLine() );
             showgrid = Boolean.parseBoolean(r.readLine() );
+            width = Integer.parseInt( r.readLine() );
+            height = Integer.parseInt( r.readLine() );
+            ncols = Integer.parseInt( r.readLine() );
+            nrows = Integer.parseInt( r.readLine() );
        } catch (Exception e) {
            e.printStackTrace();
        }
@@ -56,6 +61,10 @@ public class FontManager {
             pw.println(fname.getAbsolutePath());
             pw.println(dy);
             pw.println(showgrid);
+            pw.println(width);
+            pw.println(height);
+            pw.println(ncols);
+            pw.println(nrows);
             pw.close();
             ImageIO.write(img, "png", fname);
        } catch (Exception e) {

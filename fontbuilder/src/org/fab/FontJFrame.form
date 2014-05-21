@@ -115,19 +115,18 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JToggleButton" name="jToggleButtonFont">
+            <Component class="javax.swing.JButton" name="jButtonFont">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Font"/>
-                <Property name="toolTipText" type="java.lang.String" value="Select font and regenerate"/>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButtonFontActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonFontActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="jToggleButtonRegenerate">
+            <Component class="javax.swing.JButton" name="jButtonRegenerate">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Regenerate"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -135,7 +134,7 @@
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButtonRegenerateActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRegenerateActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonUp">
@@ -165,7 +164,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursore predefinito"/>
             </Property>
           </Properties>
           <Constraints>

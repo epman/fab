@@ -45,8 +45,8 @@ public class FontJFrame extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
-        jToggleButtonFont = new javax.swing.JToggleButton();
-        jToggleButtonRegenerate = new javax.swing.JToggleButton();
+        jButtonFont = new javax.swing.JButton();
+        jButtonRegenerate = new javax.swing.JButton();
         jButtonUp = new javax.swing.JButton();
         jButtonDown = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -88,28 +88,27 @@ public class FontJFrame extends javax.swing.JFrame {
         jToolBar1.setRollover(true);
         jToolBar1.setToolTipText("");
 
-        jToggleButtonFont.setText("Font");
-        jToggleButtonFont.setToolTipText("Select font and regenerate");
-        jToggleButtonFont.setFocusable(false);
-        jToggleButtonFont.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButtonFont.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButtonFont.addActionListener(new java.awt.event.ActionListener() {
+        jButtonFont.setText("Font");
+        jButtonFont.setFocusable(false);
+        jButtonFont.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonFont.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonFont.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButtonFontActionPerformed(evt);
+                jButtonFontActionPerformed(evt);
             }
         });
-        jToolBar1.add(jToggleButtonFont);
+        jToolBar1.add(jButtonFont);
 
-        jToggleButtonRegenerate.setText("Regenerate");
-        jToggleButtonRegenerate.setFocusable(false);
-        jToggleButtonRegenerate.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButtonRegenerate.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButtonRegenerate.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRegenerate.setText("Regenerate");
+        jButtonRegenerate.setFocusable(false);
+        jButtonRegenerate.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonRegenerate.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonRegenerate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButtonRegenerateActionPerformed(evt);
+                jButtonRegenerateActionPerformed(evt);
             }
         });
-        jToolBar1.add(jToggleButtonRegenerate);
+        jToolBar1.add(jButtonRegenerate);
 
         jButtonUp.setText("Up");
         jButtonUp.setFocusable(false);
@@ -278,6 +277,7 @@ public class FontJFrame extends javax.swing.JFrame {
 
     private void jMenuItemSetFontActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSetFontActionPerformed
         final JFontChooser fontChooser = new JFontChooser();
+        fontChooser.setFont(fman.font);
         int result = fontChooser.showDialog(this);
         if (result == JFontChooser.OK_OPTION)
         {
@@ -293,14 +293,6 @@ public class FontJFrame extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
-    private void jToggleButtonFontActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonFontActionPerformed
-        jMenuItemSetFontActionPerformed(evt);
-    }//GEN-LAST:event_jToggleButtonFontActionPerformed
-
-    private void jToggleButtonRegenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonRegenerateActionPerformed
-       jMenuItemRegenerateActionPerformed(evt);
-    }//GEN-LAST:event_jToggleButtonRegenerateActionPerformed
-
     private void jCheckBoxShowGridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxShowGridActionPerformed
        fman.showgrid = jCheckBoxShowGrid.isSelected();
        jMenuItemRegenerateActionPerformed(evt);
@@ -310,12 +302,12 @@ public class FontJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_formKeyPressed
 
     private void jButtonUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpActionPerformed
-         fman.dy += 1;
+         fman.dy -= 1;
          jMenuItemRegenerateActionPerformed(null);
     }//GEN-LAST:event_jButtonUpActionPerformed
 
     private void jButtonDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDownActionPerformed
-         fman.dy -= 1;
+         fman.dy += 1;
          jMenuItemRegenerateActionPerformed(null);
     }//GEN-LAST:event_jButtonDownActionPerformed
 
@@ -324,10 +316,20 @@ public class FontJFrame extends javax.swing.JFrame {
             updateStatus();
     }//GEN-LAST:event_jMenuItemSaveActionPerformed
 
+    private void jButtonFontActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFontActionPerformed
+        jMenuItemSetFontActionPerformed(evt);
+    }//GEN-LAST:event_jButtonFontActionPerformed
+
+    private void jButtonRegenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegenerateActionPerformed
+       jMenuItemRegenerateActionPerformed(evt);        
+    }//GEN-LAST:event_jButtonRegenerateActionPerformed
+
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDown;
+    private javax.swing.JButton jButtonFont;
+    private javax.swing.JButton jButtonRegenerate;
     private javax.swing.JButton jButtonUp;
     private javax.swing.JCheckBox jCheckBoxShowGrid;
     private javax.swing.JLabel jLabel1;
@@ -355,8 +357,6 @@ public class FontJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldHeight;
     private javax.swing.JTextField jTextFieldRows;
     private javax.swing.JTextField jTextFieldWidth;
-    private javax.swing.JToggleButton jToggleButtonFont;
-    private javax.swing.JToggleButton jToggleButtonRegenerate;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }

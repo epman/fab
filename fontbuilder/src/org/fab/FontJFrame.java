@@ -31,6 +31,12 @@ public class FontJFrame extends javax.swing.JFrame {
     public FontJFrame() {
         initComponents();
         updateStatus();
+        //jTextFieldCols.setText(Integer.toString( fman.ncols ));
+        //jTextFieldRows.setText(Integer.toString( fman.nrows ));
+        //jTextFieldWidth.setText(Integer.toString( fman.width ));
+        //jTextFieldHeight.setText(Integer.toString( fman.height ));
+        jCheckBoxShowGrid.setSelected(fman.showgrid);
+        jMenuItemRegenerateActionPerformed(null);
     }
 
     /**
@@ -155,14 +161,14 @@ public class FontJFrame extends javax.swing.JFrame {
         jLabel3.setText("Columns:");
         jPanel2.add(jLabel3);
 
-        jTextFieldCols.setText("8");
+        jTextFieldCols.setText("10");
         jPanel2.add(jTextFieldCols);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Rows:");
         jPanel2.add(jLabel4);
 
-        jTextFieldRows.setText("8");
+        jTextFieldRows.setText("10");
         jPanel2.add(jTextFieldRows);
         jPanel2.add(jLabel5);
 
